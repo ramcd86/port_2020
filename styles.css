@@ -112,7 +112,19 @@ h2 {
     font-weight: 600;
 }
 
-h3,
+h3 {
+    /* h1 { */
+        /* display: inline-block; */
+        line-height: 1;
+        margin: 0px;
+        letter-spacing: 0px;
+        font-size: 4rem;
+        text-align: center;
+        font-weight: 100;
+        color: var(--light);
+        border-bottom: 1px solid var(--dark);
+    
+}
 h4,
 h5 {
     display: block;
@@ -147,7 +159,15 @@ p {
 
 .primary-content-container {
     min-height: 150vh;
+    box-sizing: border-box;
+    max-width: 1140px;
+    padding-top: 5vh;
+    display: inline-block;
+    text-align: left;
     /* background-color: var(--medium); */
+}
+.primary-content-container > h1, h2, h3, h4, h5, h6, p { 
+    text-align: left;
 }
 
 #pre-click {
@@ -170,6 +190,7 @@ section {
     overflow-x: hidden;
     box-sizing: border-box;
     flex: 0 0 auto;
+    text-align: center;
 }
 
 #splash {
@@ -228,6 +249,9 @@ section {
     .primary-divide {
         width: 100%;
     }
+    .primary-content-container {
+        padding: 3vw;
+    }
     h1 {
         font-size: 8rem;
     }
@@ -246,7 +270,7 @@ section {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: var(--medium);
+    background: #c0c0c0;
   }
   
   /* Handle on hover */
