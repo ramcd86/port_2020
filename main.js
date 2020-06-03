@@ -6,12 +6,67 @@ class Main {
     }
   
     init() {
-      this.swipeOpenContent();
+      $("#pre-click").click(() => {
+        this.swipeOpenContent();
+      })
+
+      $(".about-nav").click(() => {
+        this.navigationController('about');
+      })
+
+      $(".portfolio-nav").click(() => {
+        this.navigationController('portfolio');
+      })
+
+      $(".blog-nav").click(() => {
+        this.navigationController('blog');
+      })
+
+      $(".contact-nav").click(() => {
+        this.navigationController('contact');
+      })
+
+    }
+
+    navigationController(selectedNavElement) {
+      document.querySelector(`#primary-content-wrapper`).scrollTo({
+        top: 0,
+        left: (document.querySelector(`#${selectedNavElement}`).offsetLeft - 20),
+        behavior: 'smooth'
+      })
+      // $('.selected').animate({
+      //   width: "0px"
+      // }, {
+      //   duration: 333,
+      //   complete: () => {
+      //     $('.selected').addClass('unselected')
+      //     $('.selected').removeClass('selected')
+      //   }
+      // })
+      // $(`#${selectedNavElement}`).animate({
+      //   width: window.innerWidth > 1024 ? "99%" : "95%"
+      // }, {
+      //   duration: 333,
+      //   complete: () => {
+      //     $(`#${selectedNavElement}`).addClass('selected')
+      //     $(`#${selectedNavElement}`).removeClass('unselected')
+      //   }
+      // })
     }
   
     swipeOpenContent() {
   
       const animateMain = () => {
+        $("#pre-click").animate({
+          height: "0px",
+          marginTop: "0vh"
+        }, {
+          duration: 444,
+          specialEasing: {
+            height: "easeInOutQuint",
+            marginTop: "easeInOutQuint",
+          }
+        })
         $("main").animate({
           height: "80vh",
           marginTop: "10vh"
@@ -76,6 +131,8 @@ class Main {
                     setMainScroll()
                 }
               })
+            } else {
+              setMainScroll()
             }
   
           }
@@ -99,7 +156,10 @@ class Main {
       }
 
       const setMainScroll = () => {
-        document.querySelector('section').style.overflowY = "scroll";
+        console.log('idk')
+        document.querySelectorAll('section').forEach((section) => {
+          section.style.overflowY = "scroll";
+        })
       }
   
       animateMain()

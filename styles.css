@@ -6,21 +6,21 @@
     --lightest: #cad2c5;
 } */
 
-:root {
+/* :root {
     --darkest: #fff;
     --dark: #b2c9ab;
     --medium: #666a86;
     --light: #666a86;
     --lightest: #666a86;
-}
-
-/* :root {
-    --darkest: #260c1a;
-    --dark: #432e36;
-    --medium: #5f4842;
-    --light: #af8d86;
-    --lightest: #edbfc6;
 } */
+
+:root {
+    --darkest: #fff;
+    --dark: #eee;
+    --medium: #0D3B66;
+    --light: #0D3B66;
+    --lightest: #000;
+}
 
 body,
 html {
@@ -53,11 +53,7 @@ main {
     background: linear-gradient(197deg, var(--darkest) 0%, var(--dark) 100%);
 }
 
-section {
-    height: 90vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
+
 
 nav {
     display: flex;
@@ -149,9 +145,81 @@ p {
     color: var(--dark);
 }
 
+.primary-content-container {
+    min-height: 150vh;
+    /* background-color: var(--medium); */
+}
+
+#pre-click {
+    cursor: pointer;
+    margin-top: 40vh;
+    text-align: center;
+    display: block;
+    font-size: 6rem;
+    color: var(--light);
+    overflow: hidden;
+}
+
+#pre-click:hover {
+    color: var(--lightest);
+}
+
+section {
+    height: 90vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+#splash {
+    display: inline-block;
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#about {
+    display: none;
+    display: inline-block;
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#portfolio {
+    display: none;
+    display: inline-block;
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#blog {
+    display: none;
+    display: inline-block;
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#contact {
+    display: none;
+    display: inline-block;
+    min-height: 90vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#primary-content-wrapper {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
 
 @media only screen and (max-width: 1024px) {
-    section {
+    section >div {
         padding: 5px;
     }
     nav>div span {
